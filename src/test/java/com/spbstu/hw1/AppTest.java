@@ -16,13 +16,13 @@ import java.util.List;
  */
 public class AppTest extends BaseSeleniumTest {
 
-    private static final String testTitle = "Index Page";
-    private static final String testLogin = "epam";
-    private static final String testPass = "1234";
-    private static final String testName = "Piter Chailovskii";
-    private static final short testImagesCount = 4;
-    private static final short testTextsCount = 4;
-    private static final List<String> testTexts = Arrays.asList("To include good practices\nand ideas from successful\nEPAM projec", "To be flexible and\ncustomizable", "To be multiplatform", "Already have good base\n(about 20 internal and\nsome external projects),\nwish to get more…");
+    public static final String testTitle = "Index Page";
+    public static final String testLogin = "epam";
+    public static final String testPass = "1234";
+    public static final String testName = "Piter Chailovskii";
+    public static final int testImagesCount = 4;
+    public static final int testTextsCount = 4;
+    public static final List<String> testTexts = Arrays.asList("To include good practices\nand ideas from successful\nEPAM projec", "To be flexible and\ncustomizable", "To be multiplatform", "Already have good base\n(about 20 internal and\nsome external projects),\nwish to get more…");
 
     private ChromeDriver driver;
 
