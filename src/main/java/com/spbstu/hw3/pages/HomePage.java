@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * Created by dmitry on 14.03.2018.
+ * Edited by Hamlet
  */
 public class HomePage {
     @FindBy(css = ".profile-photo")
