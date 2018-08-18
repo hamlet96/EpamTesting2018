@@ -34,6 +34,9 @@ public class SelenideTest extends BaseSelenideTest {
 
         //Check texts
         EpamTestSiteSelenide.homePageSelenide.checkTexts(TEXTS.strAr);
+
+        //Check services
+        EpamTestSiteSelenide.homePageSelenide.checkServices(SERVICES.strAr);
     }
 
 

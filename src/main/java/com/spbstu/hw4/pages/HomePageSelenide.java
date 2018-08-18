@@ -43,7 +43,11 @@ public class HomePageSelenide {
     @FindBy(className = "benefit-txt")
     ElementsCollection texts;
 
+    @FindBy(css = "li.dropdown")
+    SelenideElement serviceHeader;
 
+    @FindBy(css = "li.sub-menu")
+    SelenideElement serviceLeft;
     public HomePageSelenide() {
         Selenide.page(this);
     }
@@ -83,5 +87,14 @@ public class HomePageSelenide {
         }
         mainText.shouldBe(visible);
         maintTitle.shouldBe(visible);
+    }
+
+    public void checkServices(String[] str){
+        serviceLeft.click();
+        serviceHeader.click();
+        for (int i = 0; i < str.length; i++) {
+            serviceLeft.shouldHave(text(str[i]));
+            serviceHeader.shouldHave(text(str[i]));
+        }
     }
 }
