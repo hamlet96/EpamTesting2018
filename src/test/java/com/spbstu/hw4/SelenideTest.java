@@ -1,7 +1,6 @@
 package com.spbstu.hw4;
 
-import com.spbstu.hw3.EpamTestSite;
-import com.spbstu.hw4.enums.HOME_PAGE_DATA;
+import com.spbstu.hw4.enums.DIFFPAGE_ELEMENTS;
 import com.spbstu.selenide.BaseSelenideTest;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -19,7 +18,7 @@ public class SelenideTest extends BaseSelenideTest {
         EpamTestSiteSelenide.init();
     }
     @Test
-    public void selenideTest() {
+    public void selenideTest1() {
         //Navigate to test site
         EpamTestSiteSelenide.homePageSelenide.open();
 
@@ -37,8 +36,31 @@ public class SelenideTest extends BaseSelenideTest {
 
         //Check services
         EpamTestSiteSelenide.homePageSelenide.checkServices(SERVICES.strAr);
-    }
 
+        //Click
+        EpamTestSiteSelenide.differentElementsSelenide.differentElementsPageButton.click();
+
+        //Check boxes
+        EpamTestSiteSelenide.differentElementsSelenide.checkDiffBoxesExists();
+
+        //Checkbox
+        EpamTestSiteSelenide.differentElementsSelenide.selectBoxElements(DIFFPAGE_ELEMENTS.CHECK_BOXES.strAr[0]);
+        EpamTestSiteSelenide.differentElementsSelenide.selectBoxElements(DIFFPAGE_ELEMENTS.CHECK_BOXES.strAr[2]);
+
+        //Choose metal
+        EpamTestSiteSelenide.differentElementsSelenide.selectRadioElements(DIFFPAGE_ELEMENTS.RADIOS.strAr[3]);
+
+        //Color from dropdown
+        EpamTestSiteSelenide.differentElementsSelenide.selectColorElement(DIFFPAGE_ELEMENTS.DROP_COLORS.strAr[3]);
+
+        //Uncheck
+        EpamTestSiteSelenide.differentElementsSelenide.selectBoxElements(DIFFPAGE_ELEMENTS.CHECK_BOXES.strAr[0]);
+        EpamTestSiteSelenide.differentElementsSelenide.selectBoxElements(DIFFPAGE_ELEMENTS.CHECK_BOXES.strAr[2]);
+        
+
+        //Check logs
+        EpamTestSiteSelenide.differentElementsSelenide.checkSelectedElements(DIFFPAGE_ELEMENTS.SELECT_ELEMENTS.strAr);
+    }
 
     @AfterClass
     public void afterClass() {
