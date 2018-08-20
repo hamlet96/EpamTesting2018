@@ -56,7 +56,7 @@ public class SelenideTest extends BaseSelenideTest {
         //Uncheck
         EpamTestSiteSelenide.differentElementsSelenide.selectBoxElements(DIFFPAGE_ELEMENTS.CHECK_BOXES.strAr[0]);
         EpamTestSiteSelenide.differentElementsSelenide.selectBoxElements(DIFFPAGE_ELEMENTS.CHECK_BOXES.strAr[2]);
-        
+
 
         //Check logs
         EpamTestSiteSelenide.differentElementsSelenide.checkSelectedElements(DIFFPAGE_ELEMENTS.SELECT_ELEMENTS.strAr);

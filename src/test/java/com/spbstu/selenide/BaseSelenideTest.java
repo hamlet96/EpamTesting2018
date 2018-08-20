@@ -9,6 +9,7 @@ public class BaseSelenideTest extends BaseSeleniumTest {
     public void beforeSuiteSelenide() {
         Configuration.browser = "CHROME";
         Configuration.timeout = 4000;
+        Configuration.startMaximized = true;
     }
 
 }
