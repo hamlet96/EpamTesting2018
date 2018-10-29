@@ -9,7 +9,7 @@ import com.codeborne.selenide.Condition;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.actions;
-
+import ru.yandex.qatools.allure.annotations.Step;
 /**
  * Created by Hamlet on 18.08.2018.
  */
@@ -58,6 +58,7 @@ public class DifferentElementsSelenide {
         Selenide.close();
     }
 
+    @Step("Elements page: Boxes Existing")
     public void checkDiffBoxesExists() {
         for (int i = 0; i < 4; i++) {
             checkBoxes.get(i).shouldBe(Condition.visible);
@@ -70,6 +71,7 @@ public class DifferentElementsSelenide {
         button.shouldBe(Condition.visible);
     }
 
+    @Step("Elements page: Selecting Boxes")
     public void selectBoxElements(String str) {
         for (int i = 0; i < 4; i++) {
             if (checkBoxes.get(i).getText().contains(str)) {
@@ -78,6 +80,7 @@ public class DifferentElementsSelenide {
         }
     }
 
+    @Step("Elements page: Selecting Radio")
     public void selectRadioElements(String str) {
         for (int i = 0; i < 4; i++) {
             if (radios.get(i).getText().contains(str)) {
@@ -85,11 +88,12 @@ public class DifferentElementsSelenide {
             }
         }
     }
-
+    @Step("Elements page: Selecting Colors")
     public void selectColorElement(String str) {
         $(".colors .uui-form-element").selectOption(str);
     }
 
+    @Step("Elements page: Checking Selected")
     public void checkSelectedElements(String[] strAr) {
         for (int i = 0; i < 6; i++) {
             Logs.get(i).shouldHave(Condition.text(strAr[i]));
@@ -97,6 +101,7 @@ public class DifferentElementsSelenide {
         }
     }
 
+    @Step("Elements page: Unselect Elements")
     public void checkUnselectedElements(String[] strAr) {
         for (int i = 0; i < Logs.size(); i++)
             System.out.println(Logs.get(i).getText());
@@ -107,6 +112,7 @@ public class DifferentElementsSelenide {
         }
     }
 
+    @Step("Elements page: Checking Slide Positions")
     public void checkSlidePositions(int left, int right) {
         Integer length = sliderLength.getSize().width;
         Integer leftBegin = Integer.parseInt(sliders.get(0).getText());

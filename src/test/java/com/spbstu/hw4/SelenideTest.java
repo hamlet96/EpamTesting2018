@@ -5,13 +5,18 @@ import com.spbstu.selenide.BaseSelenideTest;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
+import ru.yandex.qatools.allure.annotations.*;
+import org.testng.annotations.Listeners;
+import com.spbstu.utils.AllureAttachmentListener;
 import static com.spbstu.hw4.enums.HOME_PAGE_DATA.*;
 
 /**
  * Created by dmitry on 21.03.2018.
  * Edited by Hamlet on 18.08.2018.
  */
+@Listeners(AllureAttachmentListener.class)
+@Title("Selenide Test Suide")
+@Description("Website test")
 public class SelenideTest extends BaseSelenideTest {
     @BeforeClass
     public void beforeClass() {

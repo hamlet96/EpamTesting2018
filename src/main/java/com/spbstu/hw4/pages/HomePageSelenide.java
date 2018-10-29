@@ -51,7 +51,7 @@ public class HomePageSelenide {
     public HomePageSelenide() {
         Selenide.page(this);
     }
-    @Step("Log in home page")
+    @Step("Home page: Login")
     public void open() {
         Selenide.open("https://jdi-framework.github.io/tests/index.htm");
         Selenide.zoom(0.5); //Jenkins cheat
