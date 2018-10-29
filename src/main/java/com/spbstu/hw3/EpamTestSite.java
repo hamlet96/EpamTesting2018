@@ -13,6 +13,7 @@ public class EpamTestSite {
 
     public static void init(WebDriver driver) {
         homePage = PageFactory.initElements(driver, HomePage.class);
+        driver.manage().window().maximize();
     //    contactFormPage = PageFactory.initElements(driver, ContactFormPage.class);
     }
 }

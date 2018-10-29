@@ -8,6 +8,7 @@ public class EpamTestSiteSelenide {
     static public DifferentElementsSelenide differentElementsSelenide;
 
     public static void init() {
+
         homePageSelenide = new HomePageSelenide();
         differentElementsSelenide = new DifferentElementsSelenide();
 

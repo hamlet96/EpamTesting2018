@@ -22,20 +22,21 @@ public class AppTest extends BaseSeleniumTest {
     public static final String testName = "Piter Chailovskii";
     public static final int testImagesCount = 4;
     public static final int testTextsCount = 4;
-    public static final List<String> testTexts = Arrays.asList("To include good practices\nand ideas from successful\nEPAM projec", "To be flexible and\ncustomizable", "To be multiplatform", "Already have good base\n(about 20 internal and\nsome external projects),\nwish to get more…");
+    public static final List<String> testTexts = Arrays.asList("To include good practices\nand ideas from successful\nEPAM project", "To be flexible and\ncustomizable", "To be multiplatform", "Already have good base\n(about 20 internal and\nsome external projects),\nwish to get more…");
 
     private ChromeDriver driver;
 
     @BeforeMethod
     public void beforeMethod() {
-        System.setProperty("webdriver.chrome.driver", config.pathToDriver());
+        System.setProperty("webdriver.chrome.driver", "C:/Program Files/Selenium/chromedriver.exe");
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--start-maximized");
+        driver = new ChromeDriver(options);
+        driver.manage().window().maximize();
     }
 
     @Test
     public void hw1Test(){
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-maximized");
-        driver = new ChromeDriver(options);
 
         //Step 1:Navigate to test site
         driver.navigate().to("https://jdi-framework.github.io/tests/");
@@ -45,7 +46,10 @@ public class AppTest extends BaseSeleniumTest {
                 String.format("Actual: %s but expected: %s", driver.getTitle(), testTitle));
 
         //Step 3:Perform login
-        driver.findElementByClassName("profile-photo").click();
+        String zoomInJS = "document.body.style.zoom='50%'";
+        driver.executeScript(zoomInJS); //jenkins cheat
+
+        driver.findElementByClassName("fa-user").click();
         driver.findElementById("Login").sendKeys(testLogin);
         driver.findElementById("Password").sendKeys(testPass);
         driver.findElementByClassName("form-horizontal").submit();

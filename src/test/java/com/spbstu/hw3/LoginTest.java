@@ -1,27 +1,28 @@
 package com.spbstu.hw3;
 
 import com.spbstu.hw1.AppTest;
+import com.spbstu.selenium.BaseSeleniumTest;
 import com.spbstu.utils.TestConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 
 /**
  * Created by dmitry on 14.03.2018.
  */
-public class LoginTests {
+public class LoginTest extends BaseSeleniumTest {
 
     WebDriver driver;
     protected static TestConfig config;
 
-    @BeforeSuite
-    public void beforeSuite() {
+    @BeforeClass
+    public void beforeClass() {
         config = ConfigFactory.create(TestConfig.class);
         System.setProperty("webdriver.chrome.driver", config.pathToDriver());
         ChromeOptions options = new ChromeOptions();
@@ -64,8 +65,8 @@ public class LoginTests {
         Assert.assertTrue(EpamTestSite.homePage.checkMainText(),"Main text is'n displayed");
     }
 
-    @AfterSuite
-    public void afterSuite() {
+    @AfterClass
+    public void afterClass() {
        driver.close();
     }
 }
