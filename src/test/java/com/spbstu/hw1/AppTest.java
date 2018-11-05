@@ -46,8 +46,6 @@ public class AppTest extends BaseSeleniumTest {
                 String.format("Actual: %s but expected: %s", driver.getTitle(), testTitle));
 
         //Step 3:Perform login
-        String zoomInJS = "document.body.style.zoom='50%'";
-        driver.executeScript(zoomInJS); //jenkins cheat
 
         driver.findElementByClassName("fa-user").click();
         driver.findElementById("Login").sendKeys(testLogin);

@@ -4,10 +4,6 @@ import org.aeonbits.owner.Config;
 
 import static org.aeonbits.owner.Config.Sources;
 
-/**
- * Created by dmitry on 28.02.2018.
- */
-
 @Sources({
         "classpath:test.properties"
 })
@@ -21,4 +17,13 @@ public interface TestConfig extends Config {
 
     @Key("webdriver.chrome.driver")
     String pathToDriver();
+
+    @Key("webdriver.chrome.driver_folder")
+    String driverFolder();
+
+    @Key("test.user.url")
+    String url();
+
+    @Key("test.user.username")
+    String username();
 }

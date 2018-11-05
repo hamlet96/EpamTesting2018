@@ -1,5 +1,6 @@
 #by Hamlet 28.03.2018
 .idea/
+.logs/
 target/
 build/
 EpamTesting2018.iml
